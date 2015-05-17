@@ -14,6 +14,7 @@ Realizar en JavaScript para node.js un programa que saque por consola
 - Dos línea en blanco
 - La ristra de caracteres UNICODE \u55e8\uff0c\u4f60\u597d\u5417 // En chino: 嗨，你好吗 (Hola, como estas)
   Example: http://stackoverflow.com/questions/7885096/how-do-i-decode-a-string-with-escaped-unicode
+  http://unicode.online-toolz.com/tools/text-unicode-entities-convertor.php
 */
 
 function printNumberPi(numberOfDecimals){
