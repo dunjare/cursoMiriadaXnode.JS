@@ -1,5 +1,3 @@
-
-
 /*
 Modulo 1. Introducción a JavaScript de servidor y a node.js. 
 Sentencias, Variables, Booleanos, Números, Strings y Funciones
@@ -37,7 +35,7 @@ function printCharactersUnicode(unescapeCharacters){
   }
 
   var x = unescapeCharacters; // Convierte la ristra UNICODE a los caracteres 嗨，你好吗
-  var r = /\\u([\d\w]{4})/gi; // Regular Expresion
+  var r = /\\u([\d\w]{4})/gi; // Regular Expression
   x = x.replace(r, function (match, grp) {
     return String.fromCharCode(parseInt(grp, 16)); } );
   x = unescape(x);
