@@ -49,8 +49,7 @@ incluir ademas una última instrucción en el programa que liste la agenda amigo
                 },
                 meter: function (nombre, tf) {
                     console.log("2.- Agregando a " + nombre);
-                    _contenido[nombre] = tf;
-                    amigos.listar();
+                    _contenido[nombre] = tf;   
                 },
                 tf: function (nombre) {
                     return _contenido[nombre];
@@ -58,7 +57,6 @@ incluir ademas una última instrucción en el programa que liste la agenda amigo
                 borrar: function (nombre) {
                     console.log("3.- Borrando a " + nombre);
                     delete _contenido[nombre];
-                    amigos.listar();
                 },
                 toJSON: function () {
                     return JSON.stringify(_contenido);
@@ -85,7 +83,9 @@ incluir ademas una última instrucción en el programa que liste la agenda amigo
         amigos.listar();
 
         amigos.meter("Claudia",696969696);
+        amigos.listar();
 
         amigos.borrar("Claudia");  
+        amigos.listar();
 })();
 
