@@ -37,3 +37,55 @@ Añadir un método listar() al cierre agenda(..) {...} que liste por consola cad
 incluir ademas una última instrucción en el programa que liste la agenda amigos por consola utilizando el nuevo método listar.
 */
 
+// TODO: COMETAR
+
+        function agenda(titulo, inic) {
+            var _titulo = titulo;
+            var _contenido = inic;
+
+            return {
+                titulo: function () {
+                    return _titulo;
+                },
+                meter: function (nombre, tf) {
+                    console.log("2.- Agregando a " + nombre);
+                    _contenido[nombre] = tf;
+                    amigos.listar();
+                },
+                tf: function (nombre) {
+                    return _contenido[nombre];
+                },
+                borrar: function (nombre) {
+                    console.log("3.- Borrando a " + nombre);
+                    delete _contenido[nombre];
+                    amigos.listar();
+                },
+                toJSON: function () {
+                    return JSON.stringify(_contenido);
+                },
+
+                listar: function () {
+                    var listado = "";
+                    for (var item in _contenido) {
+                        listado = listado + item+ ", " + this.tf(item) + "\n";                        
+                    }  
+                    console.log(listado); 
+                    }    
+            }
+        }
+        var amigos = agenda("Amigos", {
+            Pepe: 113278561,
+            José: 157845123,
+            Jesús: 178512355
+        });
+        
+            
+    (function(){
+        console.log("1.- Mostrar agenda: " + amigos.titulo());
+        amigos.listar();
+
+        amigos.meter("Claudia",696969696);
+
+        amigos.borrar("Claudia");  
+})();
+
