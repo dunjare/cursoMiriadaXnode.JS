@@ -44,28 +44,28 @@ incluir ademas una última instrucción en el programa que liste la agenda amigo
             var _contenido = inic;
 
             return {
-                titulo: function () {
+                titulo: function () { // Asignar nombre a la Agenda
                     return _titulo;
                 },
-                meter: function (nombre, tf) {
+                meter: function (nombre, tf) {  // Agrega un nuevo contacto a la agenda
                     console.log("2.- Agregando a " + nombre);
                     _contenido[nombre] = tf;   
                 },
                 tf: function (nombre) {
                     return _contenido[nombre];
                 },
-                borrar: function (nombre) {
+                borrar: function (nombre) {  // Elimina un contacto de la agenda
                     console.log("3.- Borrando a " + nombre);
                     delete _contenido[nombre];
                 },
-                toJSON: function () {
+                toJSON: function () { 
                     return JSON.stringify(_contenido);
                 },
 
-                listar: function () {
+                listar: function () { // Crea una cadena para mostar los contactos de la agenda
                     var listado = "";
                     for (var item in _contenido) {
-                        listado = listado + item+ ", " + this.tf(item) + "\n";                        
+                        listado = listado + item + ", " + _contenido[item] + "\n";                        
                     }  
                     console.log(listado); 
                     }    
@@ -79,13 +79,13 @@ incluir ademas una última instrucción en el programa que liste la agenda amigo
         
             
     (function(){
-        console.log("1.- Mostrar agenda: " + amigos.titulo());
+        console.log("1.- Mostrar agenda: " + amigos.titulo()); // Mostar Título de la agenda
         amigos.listar();
 
-        amigos.meter("Claudia",696969696);
+        amigos.meter("Claudia",696969696); // Agrega un nuevo contacto a la agenda
         amigos.listar();
 
-        amigos.borrar("Claudia");  
+        amigos.borrar("Claudia");  // Elimina un contacto de la agenda
         amigos.listar();
 })();
 
