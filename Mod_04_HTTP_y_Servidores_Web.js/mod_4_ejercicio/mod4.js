@@ -35,9 +35,9 @@ var bodyParser = require('body-parser');
 var QS = require('querystring'),
     e, d;
 
-app.use(bodyParser.urlencoded({
-    extend: true
-}));
+app.use(bodyParser.urlencoded({ extended: false }));
+
+app.use(bodyParser.json());
 
 app.use(express.static(path.join(__dirname, 'public')));
 
